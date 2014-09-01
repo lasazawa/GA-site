@@ -2,4 +2,56 @@ body{
 	background:url("http://i.imgur.com/swZAXpF.png");
     background-size: cover; 
     font-family: 'Raleway', Helvetica, sans-serif;
+    color:white;
+}
+img{
+	height: 200px;
+	margin: 20px 0 0 0;
+}
+h1{
+	font-size: 48px;
+	line-height: 1em;
+	font-weight: 300;
+}
+h3{
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+	font-size: 16px;
+}
+a{
+	color: black;
+	font-weight:700;
+	font-size: 14px;
+	background-color:white;
+	padding: 4px;
+	margin: 10px 0; 
+}
+p{
+	line-height: 1.375em;
+}
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+}
+.info{
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	padding: 60px 0;
+	margin-top:40px;
+}
+.about div{
+	width: 28%;
+	float: left;
+	margin: 0 3%;
+}
+.email, .linkedin{
+	display: block;
+	float: none;
+}
+@media (max-width:480px){
+	.container{
+	width: 90%;
+	margin:0 auto;
+}
 }
