@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="reset.css">
 <link rel="stylesheet" type="text/css" href="main.css">
 <title>About Lauren</title>
@@ -84,14 +84,15 @@ $(document).ready(function(){
 
 //FOR PREVIOUS BUTTON
 	//when clicking .previous button class
-	$(".previousLInk").on("click", function(){
+	$(".previousLink").on("click", function(){
 		//defines the current image shown which is what has .image-shown style
 		var currentShownImage = $(".image-shown");
 		//and defines the next image to be shown when clicking previous which is the previous image in order from the current shown
 		var nextShownImage = currentShownImage.prev();
 
 		//if the next image is equal to zero then 	
-		if(nextShownImage.length == 0){
+		if(nextShownImage.length == 0)
+		{
 			//the next image to be shown is the last img in .carousel a
 			nextShownImage = $(".carousel-inner a").last();
 		}
