@@ -7,6 +7,10 @@
 </head>
 <body>
 	<div class="container">
+		<div class="latest-post">
+			<img src="http://i.imgur.com/W7kzS4a.png">
+			<p class="small">Climbing Red Rocks</p>
+		</div>
 		<img src="http://i.imgur.com/zQ808Pd.png">
 		<h1>Yo! Lauren here!</h1>
 	</div>
@@ -34,19 +38,37 @@
 		</div>	
 	</div>
 	<div class="carousel">
+		<div class="container carousel-inner">
+			<img class="image-shown" src="http://i.imgur.com/0pUUrie.jpg">
+			<img class="image-hidden" src="http://i.imgur.com/YVXGbd5.jpg">
+			<img class="image-hidden" src="http://i.imgur.com/BqRkxL2.jpg">
+			<img class="image-hidden" src="http://i.imgur.com/KEh5qzR.jpg">
+		</div>
 		<div class="container">
-			<ul>
-				<li><img src="http://i.imgur.com/0pUUrie.jpg"></li>
-				<li><img src="http://i.imgur.com/YVXGbd5.jpg"></li>
-				<li><img src="http://i.imgur.com/BqRkxL2.jpg"></li>
-				<li><img src="http://i.imgur.com/KEh5qzR.jpg"></li>
-			</ul>
+			<a class="previous" href"#">Previous</a>
+			<a class="next" href"#">Next</a>
 		</div>
 	</div>
+
+
 <script src="jquery-1.11.1.js">
-	$(document).ready(function(){
-		console.log("jquery works")
+$(document).ready(function(){
+	$(".next").on("click", function() {
+
+		//defines the image with class .image-shown
+		var currentShownImage = $(".image-shown");
+		//defines the image following the image with class .image-shown
+		var nextShownImage = currentShownImage.next();
+		
+		//removes .image-shown class and adds .image-hidden class
+		currentShownImage.removeClass("image-shown").addClass("image-hidden");
+		//.image-shown class is added to nextShownImage and removes .image-hidden
+		nextShownImage.addClass("image-shown").removeClass("image-hidden");
+		
+		
+
 	});
+});		
 </script>
 
 </body>
