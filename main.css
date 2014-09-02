@@ -98,6 +98,18 @@ p{
 .small{
 	font-size: 10px;
 }
+.footer{
+	height: 120px;
+}
+.footer img{
+	height: 100px;
+	padding: 10px;
+	float: left;
+	margin: 0;
+}
+.footer p{
+	padding-top: 60px;
+}
 @media(max-width: 800px){
 .about-me, .experience, .contact-info{
 	width:100%;

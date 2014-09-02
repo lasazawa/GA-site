@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="reset.css">
 <link rel="stylesheet" type="text/css" href="main.css">
@@ -38,7 +39,7 @@
 		</div>	
 	</div>
 	<div class="carousel">
-		<div class="container carousel-inner">
+		<div class="container">
 			<img class="image-shown" src="http://i.imgur.com/0pUUrie.jpg">
 			<img class="image-hidden" src="http://i.imgur.com/YVXGbd5.jpg">
 			<img class="image-hidden" src="http://i.imgur.com/BqRkxL2.jpg">
@@ -49,9 +50,12 @@
 			<a class="next" href"#">Next</a>
 		</div>
 	</div>
+<div class="footer">
+	<img src="http://i.imgur.com/jc1smPj.png">
+	<p class="small">All rights reserved.</p>
+</div>
 
-
-<script src="jquery-1.11.1.js">
+<script>
 $(document).ready(function(){
 	$(".next").on("click", function() {
 
@@ -60,13 +64,34 @@ $(document).ready(function(){
 		//defines the image following the image with class .image-shown
 		var nextShownImage = currentShownImage.next();
 		
+		//if nextshownimage is equal to zero then
+		if(nextShownImage.length == 0)
+		{
+			//next image will be the first img in the .carousel div
+			nextShownImage = $(".carousel img").first();
+		}
+
 		//removes .image-shown class and adds .image-hidden class
 		currentShownImage.removeClass("image-shown").addClass("image-hidden");
 		//.image-shown class is added to nextShownImage and removes .image-hidden
 		nextShownImage.addClass("image-shown").removeClass("image-hidden");
-		
-		
 
+	});
+
+//FOR PREVIOUS BUTTON
+	$(".previous").on("click", function(){
+		var currentShownImage = $(".image-shown");
+		var nextShownImage = currentShownImage.prev();
+
+		if(nextShownImage.length == 0){
+			nextShownImage = $(".carousel img").last();
+		}
+
+		currentShownImage.removeClass("image-shown").addClass("image-hidden").css("z-index", -10);
+		nextShownImage.addClass("image-shown").removeClass("image-hidden").css("z-index", 20);
+		$(".carousel img").not([currentShownImage, nextShownImage]).css("z-index", 1);
+
+		e.preventDefault();
 	});
 });		
 </script>
