@@ -3,6 +3,7 @@ body{
     background-size: cover; 
     font-family: 'Raleway', Helvetica, sans-serif;
     color:white;
+    text-align: center;
 }
 img{
 	height: 200px;
@@ -13,22 +14,27 @@ h1{
 	line-height: 1em;
 	font-weight: 300;
 }
+h2{
+	font-size: 32px;
+}
 h3{
 	font-weight: 700;
 	text-transform: uppercase;
 	color: white;
 	font-size: 16px;
+	margin: 24px 0 12px 0;
 }
 a{
-	color: black;
+	color: #69acfc;
 	font-weight:700;
 	font-size: 14px;
-	background-color:white;
+	line-height: 2em;
 	padding: 4px;
 	margin: 10px 0; 
 }
 p{
 	line-height: 1.375em;
+	font-size: 14px;
 }
 .container{
 	max-width: 800px;
@@ -37,21 +43,50 @@ p{
 .info{
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
-	padding: 60px 0;
+	padding: 40px 0;
 	margin-top:40px;
+	height:400px;
 }
-.about div{
-	width: 28%;
-	float: left;
-	margin: 0 3%;
+.about-me, .experience, .contact-info{
+	width: 31%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 1%;
 }
 .email, .linkedin{
 	display: block;
 	float: none;
 }
+.carousel{
+	background-color:rgba(255,255,255,0.25);
+	height: 260px;
+	padding: 24px 0;
+}
+.carousel li{
+	list-style: none;
+	list-style-type: none;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+	width: 24%;
+	float: left;
+	height: 200px;
+	margin: 0 4px;
+	color:red;
+}
+.carousel ul{
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+@media(max-width: 800px){
+.about-me, .experience, .contact-info{
+	width:100%;
+}
+}
 @media (max-width:480px){
 	.container{
 	width: 90%;
-	margin:0 auto;
+	margin:0 20px;
 }
 }
