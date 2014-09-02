@@ -40,14 +40,16 @@
 	</div>
 	<div class="carousel">
 		<div class="container">
-			<img class="image-shown" src="http://i.imgur.com/0pUUrie.jpg">
-			<img class="image-hidden" src="http://i.imgur.com/YVXGbd5.jpg">
-			<img class="image-hidden" src="http://i.imgur.com/BqRkxL2.jpg">
-			<img class="image-hidden" src="http://i.imgur.com/KEh5qzR.jpg">
+			<div class="carousel-inner">
+				<a class="image-shown"><img src="http://i.imgur.com/0pUUrie.jpg"></a>
+				<a class="image-hidden"><img src="http://i.imgur.com/YVXGbd5.jpg"></a>
+				<a class="image-hidden"><img src="http://i.imgur.com/BqRkxL2.jpg"></a>
+				<a class="image-hidden"><img src="http://i.imgur.com/KEh5qzR.jpg"></a>
+			</div>
 		</div>
 		<div class="container">
-			<a class="previous" href"#">Previous</a>
-			<a class="next" href"#">Next</a>
+			<a class="previousLink" href"#">Previous</a>
+			<a class="nextLink" href"#">Next</a>
 		</div>
 	</div>
 <div class="footer">
@@ -57,8 +59,9 @@
 
 <script>
 $(document).ready(function(){
-	$(".next").on("click", function() {
+	$(".nextLink").on("click", function(e) {
 
+		//DEFINES TWO VARIABLES
 		//defines the image with class .image-shown
 		var currentShownImage = $(".image-shown");
 		//defines the image following the image with class .image-shown
@@ -67,8 +70,8 @@ $(document).ready(function(){
 		//if nextshownimage is equal to zero then
 		if(nextShownImage.length == 0)
 		{
-			//next image will be the first img in the .carousel div
-			nextShownImage = $(".carousel img").first();
+			//next image will be the first img in the .carousel a
+			nextShownImage = $(".carousel-inner a").first();
 		}
 
 		//removes .image-shown class and adds .image-hidden class
@@ -79,19 +82,24 @@ $(document).ready(function(){
 	});
 
 //FOR PREVIOUS BUTTON
-	$(".previous").on("click", function(){
+	//when clicking .previous button class
+	$(".previousLInk").on("click", function(e){
+		//defines the current image shown which is what has .image-shown style
 		var currentShownImage = $(".image-shown");
+		//and defines the next image to be shown when clicking previous which is the previous image in order from the current shown
 		var nextShownImage = currentShownImage.prev();
 
+		//if the next image is equal to zero then 	
 		if(nextShownImage.length == 0){
-			nextShownImage = $(".carousel img").last();
+			//the next image to be shown is the last img in .carousel a
+			nextShownImage = $(".carousel-inner a").last();
 		}
 
-		currentShownImage.removeClass("image-shown").addClass("image-hidden").css("z-index", -10);
-		nextShownImage.addClass("image-shown").removeClass("image-hidden").css("z-index", 20);
-		$(".carousel img").not([currentShownImage, nextShownImage]).css("z-index", 1);
+		//whatever the current image is, remove class .image-shown and add the class .image-hidden to hide
+		currentShownImage.removeClass("image-shown").addClass("image-hidden");
+		//.image-shown class is added to nextShownImage and removes .image-hidden
+		nextShownImage.addClass("image-shown").removeClass("image-hidden");
 
-		e.preventDefault();
 	});
 });		
 </script>

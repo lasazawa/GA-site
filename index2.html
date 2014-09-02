@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="main2.css">
+<title>About Lauren</title>
+</head>
+<body>
+	<div class="container">
+		<div class="latest-post">
+			<img src="http://i.imgur.com/W7kzS4a.png">
+			<p class="small">Climbing Red Rocks</p>
+		</div>
+		<img src="http://i.imgur.com/zQ808Pd.png">
+		<h1>Yo! Lauren here!</h1>
+	</div>
+	<div class="info">
+		<div class="container">
+			<h2>A snippet about me</h2>
+			<div class="about-me">
+				<h3>The Gist</h3>
+				<p>I'm a bay area native living in SF but originally from Oakland. I grew up drawing lots which eventually spawned the seed of my UX Design career. My hobbies include rock climbing, basketball, and going to the driving range (even though I suck).</p>
+			</div>
+			<div class="experience">
+				<h3>Coding</h3>
+				<p>My experince coding started a few years back when I was working for a start up. I had a difficult time getting my designs to come out as expected and decided to dive in and code the front-end myself. I must admit I didn't know many 'best practices' but over time have improved.</p>
+			</div>
+			<div class="contact-info">
+				<h3>contact</h3>
+				<p>510.418.0284</p>
+				<div class="email">
+					<a href="mailto:lasazawa@gmail.com" target="_blank">lasazawa@gmail.com</a>
+				</div>
+				<div class="linkedin">
+					<a href="http://www.linkedin.com/in/lasazawa" target="_blank">linkedin.com/in/lasazawa</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="carousel-bg">
+		<div class="container">
+			<div id="carousel_inner">
+				<ul id="carousel_ul">
+					<li><img src="http://i.imgur.com/0pUUrie.jpg"></li>
+					<li><img src="http://i.imgur.com/YVXGbd5.jpg"></li>
+					<li><img src="http://i.imgur.com/BqRkxL2.jpg"></li>
+					<li><img src="http://i.imgur.com/KEh5qzR.jpg"></li>
+				<ul>
+			</div>
+		</div>
+		<div class="container">
+			<a class="previous" href"#">Previous</a>
+			<a class="next" href"#">Next</a>
+		</div>
+	</div>
+<div class="footer">
+	<img src="http://i.imgur.com/jc1smPj.png">
+	<p class="small">All rights reserved.</p>
+</div>
+
+<script>
+$(document).ready(function(){
+	//moves the last list item before the first item
+	$('#carousel_ul li:first').before($('#carousel_ul li:last'));
+	//when user clicks the image for sliding right
+	$('.next').click(function(){
+		
+	})
+});		
+</script>
+
+</body>
+

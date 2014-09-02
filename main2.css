@@ -45,18 +45,6 @@ p{
 	max-width: 800px;
 	margin: 0 auto;
 }
-.latest-post{
-	position: absolute;
-	right: 20px;
-	top: 10px;
-}
-.latest-post img{
-	height: 50px;
-	margin:0;
-}
-.small{
-	font-size: 10px;
-}
 .info{
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
@@ -74,33 +62,62 @@ p{
 	display: block;
 	float: none;
 }
-.carousel{
+.carousel-bg{
 	background-color:rgba(0,0,0,0.75);
 	height: 260px;
 	padding: 24px 0;
 }
-
-.carousel-inner img{
-	height:200px;
-	border-radius: 5px;
-	margin-top: 0;
+#carousel{
+	width: width:600px;
+	margin:0 auto;
+	overflow: hidden;
 }
 
-.image-shown{
-	display: inline-block;
+#carousel-inner{
+	float: left;
+	width: 800px;
+	overflow: hidden;
+	background-color: pink;
 }
 
-.image-hidden{
-	display: none;
+#carousel_ul{
+	position: relative;
+	left:-100px;
+	list-style-type:none;
+	margin: 0;
+	padding-top: 0;
+	width: 9999px; 
 }
 
-.previousLink{
+#carousel_ul li{
+	float: left;
+	width: 200px;
+	padding:0;
+	height: 120px;
+	background: #000000;
+}
+
+#carousel_ul li img{
+	cursor: pointer;
+}
+.previous{
 	float: left;
 }
-.nextLink{
+.next{
 	float:right;
 }
-
+.latest-post{
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+.latest-post img{
+	height: 50px;
+	margin:0;
+}
+.small{
+	font-size: 10px;
+}
 .footer{
 	height: 120px;
 }
