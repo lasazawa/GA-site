@@ -52,6 +52,7 @@
 			<a class="nextLink" href"#">Next</a>
 		</div>
 	</div>
+
 <div class="footer">
 	<img src="http://i.imgur.com/jc1smPj.png">
 	<p class="small">All rights reserved.</p>
@@ -59,7 +60,7 @@
 
 <script>
 $(document).ready(function(){
-	$(".nextLink").on("click", function(e) {
+	$(".nextLink").on("click", function() {
 
 		//DEFINES TWO VARIABLES
 		//defines the image with class .image-shown
@@ -83,7 +84,7 @@ $(document).ready(function(){
 
 //FOR PREVIOUS BUTTON
 	//when clicking .previous button class
-	$(".previousLInk").on("click", function(e){
+	$(".previousLInk").on("click", function(){
 		//defines the current image shown which is what has .image-shown style
 		var currentShownImage = $(".image-shown");
 		//and defines the next image to be shown when clicking previous which is the previous image in order from the current shown
